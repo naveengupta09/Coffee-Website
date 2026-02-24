@@ -19,7 +19,7 @@
                 <h2 class="logo-text">☕ Coffee</h2>
             </a>
             <ul class="nav-menu">
-                <button id="menu-close-button" class="fas fa-times"></button>
+                <button id="menu-close-button" class="fas fa-times" type="button" aria-label="Close menu"></button>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">Home</a>
@@ -40,7 +40,21 @@
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <button id="menu-open-button" class="fas fa-bars"></button>
+            <div class="nav-actions">
+                <button class="action-button" type="button" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <span class="sr-only">Search</span>
+                </button>
+                <button class="action-button" type="button" aria-label="Cart">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <span class="sr-only">Cart</span>
+                </button>
+                <button class="action-button" type="button" aria-label="Account">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <span class="sr-only">Account</span>
+                </button>
+            </div>
+            <button id="menu-open-button" class="fas fa-bars" type="button" aria-label="Open menu"></button>
         </nav>
     </header>
     
@@ -54,8 +68,14 @@
                     <p class="description">Welcome to our coffee paradise, where every bean tells a story and every cup sparks joy. Experience the perfect blend of tradition and innovation in every sip.</p>
                     
                     <div class="buttons">
-                        <a href="#menu" class="button order-now">Order Now</a>
-                        <a href="#contact" class="button contact-now">Contact us</a>
+                        <a href="#menu" class="button order-now">
+                            <i class="fa-solid fa-mug-hot button-icon" aria-hidden="true"></i>
+                            Order Now
+                        </a>
+                        <a href="#contact" class="button contact-now">
+                            <i class="fa-regular fa-envelope button-icon" aria-hidden="true"></i>
+                            Contact us
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -206,11 +226,11 @@
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-envelope"></i>
-                        <p>naveenkumar54111@gmail.com</p>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=naveenkumar54111@gmail.com" class="contact-link" target="_blank" rel="noopener noreferrer">naveenkumar54111@gmail.com</a>
                     </li>
                     <li class="contact-info">
                         <i class="fa-solid fa-phone"></i>
-                        <p>(+91) 7369056189</p>
+                        <a href="tel:+917369056189" class="contact-link">(+91) 7369056189</a>
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-clock"></i>
@@ -226,7 +246,7 @@
                     </li>
                     <li class="contact-info">
                         <i class="fa-regular fa-globe"></i>
-                        <p>https://naveengupta.netlify.app/</p>
+                        <a href="https://naveengupta.netlify.app/" class="contact-link" target="_blank" rel="noopener noreferrer">https://naveengupta.netlify.app/</a>
                     </li>
                 </ul>
 
@@ -241,7 +261,7 @@
             <!-- Footer Section -->
           <footer class="footer-section">
             <div class="section-content">
-                <p class="copyright-text">@2024 Coffee Website. </p>
+                <p class="copyright-text">@2026 Coffee Website. </p>
                 <div class="social-link-list">
                     <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
