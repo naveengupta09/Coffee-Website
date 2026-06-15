@@ -1,5 +1,4 @@
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+/* Google Fonts are loaded in the HTML head for better performance */
 
 *{
     margin: 0;
@@ -943,5 +942,120 @@ header .navbar{
     .footer-section .section-content{
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+/* Improvements: Accessibility, responsiveness, and consistency */
+
+/* sensible defaults for images */
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Reduce heavy shadows for readability and performance */
+:root{
+    --soft-shadow: 0 8px 20px rgba(59,20,28,0.10);
+}
+
+/* Accessible focus states */
+:where(a, button, input, textarea){
+    outline: none;
+}
+
+:where(a:focus, button:focus, input:focus, textarea:focus){
+    outline: 3px solid rgba(243,150,28,0.18);
+    outline-offset: 3px;
+}
+
+/* Buttons: consistent appearance and hit target */
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--border-radius-m);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.button:focus{
+    box-shadow: 0 6px 18px rgba(59,20,28,0.12);
+}
+
+/* Improve navbar touch targets and stacking */
+.navbar .nav-menu .nav-link{
+    padding: 12px 20px;
+}
+
+/* Ensure mobile menu covers and is scrollable on small devices */
+.navbar .nav-menu{
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Menu open/close icons visible on mobile with clearer hit area */
+#menu-open-button, #menu-close-button{
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    color: var(--white-color);
+}
+
+/* Card consistency */
+.menu-section .menu-list .menu-item,
+.testimonials-section .testimonial,
+.gallery-section .gallery-item,
+.about-section .section-content,
+.contact-section .section-content{
+    box-shadow: var(--soft-shadow);
+}
+
+/* Limit image zoom in gallery to avoid overflow */
+.gallery-section .gallery-item .gallery-image{
+    transition: transform 0.45s cubic-bezier(.2,.9,.2,1);
+    will-change: transform;
+}
+
+.gallery-section .gallery-item:hover .gallery-image{
+    transform: scale(1.08);
+}
+
+/* Form inputs: clearer states */
+.contact-section .contact-form .form-input{
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.12s ease;
+}
+
+.contact-section .contact-form .form-input:focus{
+    transform: translateY(-1px);
+}
+
+/* Footer: stack neatly on small screens */
+@media screen and (max-width: 640px){
+    .footer-section .section-content{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* Slight typography scaling for very large screens */
+@media screen and (min-width: 1400px){
+    :root{
+        --site-max-width: 1500px;
+        --font-size-xxl: 2.6rem;
     }
 }

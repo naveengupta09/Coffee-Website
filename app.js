@@ -2,23 +2,29 @@ const navLinks = document.querySelectorAll(".nav-menu .nav-link");
 const menuOpenButton = document.querySelector("#menu-open-button");
 const menuCloseButton = document.querySelector("#menu-close-button");
 
-menuOpenButton.addEventListener("click", () => {
-    // Toggle mobile menu visibility
+if (menuOpenButton) {
+  menuOpenButton.addEventListener("click", () => {
     document.body.classList.toggle("show-mobile-menu");
-});
+  });
+}
 
 // Close menu when the close button is clicked
-menuCloseButton.addEventListener("click", () => menuOpenButton.click());
+if (menuCloseButton && menuOpenButton) {
+  menuCloseButton.addEventListener("click", () => menuOpenButton.click());
+}
 
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    document.body.classList.remove("show-mobile-menu");
+if (navLinks && navLinks.length) {
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      document.body.classList.remove("show-mobile-menu");
+    });
   });
-});
+}
 
 //Initialize Swiper
 
-const swiper = new Swiper('.slider-wrapper', {
+if (typeof Swiper !== 'undefined') {
+  const swiper = new Swiper('.slider-wrapper', {
     loop: true,
     grabCursor: true,
     spaceBetween: 25,
@@ -49,3 +55,4 @@ const swiper = new Swiper('.slider-wrapper', {
       }
     }
   });
+}
